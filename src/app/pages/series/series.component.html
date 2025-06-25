@@ -1,0 +1,9 @@
+<main>
+    @let config = sliderService.TvConfig();
+    @let data = sliderService.TvData();
+
+    
+    <app-hero class="hero" [id]="heroId" [type]="'tv'"> </app-hero> 
+       
+    <app-slider-set-up [dataInput]="data" [configInput]="config"></app-slider-set-up>
+</main>

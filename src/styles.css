@@ -1,0 +1,141 @@
+@import '@angular/cdk/overlay-prebuilt.css';
+
+
+
+/* FONT FAMILY */
+
+@font-face {
+    font-family:'Netflix Sans';
+    src:local(), 
+        url('/fonts/netflixsans-light-webfont.woff2'),
+        url('/fonts/netflixsans-light-webfont.woff');
+
+    font-weight:300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family:'Netflix Sans';
+    src:local(), 
+        url('/fonts/netflixsans-regular-webfont.woff2'),
+        url('/fonts/netflixsans-regular-webfont.woff');
+        
+    font-weight:400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family:'Netflix Sans';
+    src:local(), 
+        url('/fonts/netflixsans-medium-webfont.woff2'),
+        url('/fonts/netflixsans-medium-webfont.woff');
+        
+    font-weight:500;
+    font-display: swap;
+}
+@font-face {
+    font-family:'Netflix Sans';
+    src:local(), 
+        url('/fonts/netflixsans-bold-webfont.woff2'),
+        url('/fonts/netflixsans-bold-webfont.woff');
+        
+    font-weight:700;
+    font-display: swap;
+}
+
+
+/* VARiABLES */
+
+:root {
+    /* Colors */
+
+    --c-black-1: #000;
+    --c-black-2: #141414;
+    --c-black-3: #181818;
+    --c-black-6: #242424;
+    --c-black-4:  hsla(0, 0%, 0%, 0.749);
+    --c-black-5: rgba(0, 0, 0, .85);
+    
+    --c-white-1:#fff;
+    --c-white-2:#e5e5e5;
+    --c-white-3:#dcdcdc;
+
+    --c-red-1: #b9090b;
+    --c-red-2:#e50914;
+
+    --c-grey-1: rgba(109, 109, 110, 0.7);
+    --c-grey-2: rgba(109, 109, 110, 0.7);
+    --c-grey-3: #bcbcbc;
+    --c-grey-4: #777;
+    --c-grey-5: grey;
+    --c-grey-6: hsla(0, 0%, 100%, .25);
+
+    --c-blue-1: #54b9c5;
+
+    /* SPACING */
+    --space-xs: 0.3rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-xll: 3rem;
+
+    /* Font-family */
+
+    --f-ff: 'Netflix Sans', 'Roboto', 'sans-serif';
+
+    /* Font-Weight */
+    --f-fw-light: 300;
+    --f-fw-regular: 400;
+    --f-fw-medium: 500;
+    --f-fw-bold: 700;
+
+      /* Font-Size */
+
+
+}
+
+/* GLOABL STYLES */
+
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--f-ff);
+    font-size: 14px;
+    background-color: var(--c-black-2 );
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+p, h1, h2, h3, h4, h5 {
+    margin: 0;
+    padding: 0;
+}
+
+a, button {
+    font-family: inherit;
+    color: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

@@ -1,0 +1,103 @@
+.porfile {
+    background-color: var(--c-black-5);
+    width: 220px;
+    padding: 1rem;
+
+    font-weight: var(--f-fw-regular);
+    color: var(--c-white-1);
+    font-size: 13px;
+}
+
+
+.porfile__list, .settings__list, .porfile {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.porfile {
+    gap: var(--space-md);
+}
+
+.porfile__item, .settings__item {
+    cursor: pointer;
+    width:fit-content;
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.porfile__item p {
+    text-transform: uppercase;
+}
+
+.settings__item svg path {
+    fill: var(--c-white-2);
+}
+
+
+.porfile__item img {
+    border-radius: 5px;
+}
+
+.sign__out {
+    cursor: pointer;
+    text-align: center;
+    border-top: 1px solid var(--c-grey-6);    
+    padding-top: 1rem;
+}
+
+
+.porfile__item:hover p, .settings__item:hover p, .sign__out:hover p {
+    text-decoration: underline;
+}
+
+.porfile::after {
+    content: ' ';
+    position: absolute;
+    top: -15px;
+    right: 15px;
+    background-color: var(--c-white-2);
+    clip-path: polygon(52% 60%, 0% 100%, 100% 100%);
+    width: 15px;
+    height: 15px;
+}
+
+@media (max-width:550px) {
+    .porfile {
+        width: 100%;
+        background-color: var(--c-black-2);
+        font-size: 1rem;
+        height:100% ;
+        gap: var(--space-md);
+    }
+    .porfile > * {
+        align-self: flex-end;
+    }
+    .porfile__list, .settings__list {
+        justify-self: center;
+        gap: 10px;
+    }
+
+    .porfile__list::before, .settings__list::before {
+        content:'Porfiles';
+        font-family: inherit;
+        color: inherit;
+        font-weight: var(--f-fw-regular);
+        font-size: 1.2rem;
+        translate: -40%;
+        margin-bottom: 1rem;
+
+    }
+    .settings__list::before {
+        content:'Settings';
+        translate: -20%;
+    }
+
+    .settings__list svg {
+        width: 16px;
+        height: 16px;
+    }
+    .sign__out {
+        font-size: 1rem;
+    }
+}

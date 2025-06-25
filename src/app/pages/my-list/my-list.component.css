@@ -1,0 +1,43 @@
+
+
+.list {
+    padding-left: 4rem;
+    padding-top: 7rem;
+}
+
+.list__header {
+    font-size: 2rem;
+    color: var(--c-white-1);
+    width: fit-content;
+}
+
+.list__content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    padding:0.5rem ;
+}
+
+.skeleton {
+    color: var(--c-white-2);
+    font-size: 1.3rem;
+    padding-left: 2rem;
+    padding-top: 2rem;
+}
+
+@media(max-width:600px) {
+    .list__content {
+        justify-content: center;
+        
+    }
+    .list {
+        padding-left: 0;
+        padding-top: 6rem;
+    }
+
+    .list__header {
+        margin: 0 auto;
+    }
+}

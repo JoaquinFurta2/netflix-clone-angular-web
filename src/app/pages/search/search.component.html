@@ -1,0 +1,43 @@
+<div class="results">
+    <h2 class="results__title">Movie Results</h2>
+    <div class="results__content">
+        @if(tvsSerchResults() | async; as movieResults) {
+            @if (movieResults.length > 0) {
+                @for (item of movieSearchResults() | async; track item.id) {
+                    @let type = 'movie';
+                    @let itemObj = {'title': item.title, 'poster': item.poster_path, 'backdrop': item.backdrop_path};
+                    <app-card  class="card" [mediaData]= "itemObj" cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" (mouseenter)="onMouseEnter(item.id, card, type)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id, type)"></app-card>              
+                }  
+            }@else {
+                <div class="results__skeleton">
+                    <p>No Movies were founded... </p>
+                </div>
+            }
+        }@else {
+            <div class="skeleton"></div>
+        }
+          
+    </div>
+
+    <h2 class="results__title">Tv Results</h2>
+    <div class="results__content">
+        @if(tvsSerchResults() | async; as tvResults) {
+            @if (tvResults.length > 0) {
+                @for (item of tvResults; track item.id) {
+                    @let type = 'tv';
+                    @let itemObj = {'title': item.name, 'poster': item.poster_path, 'backdrop': item.backdrop_path};
+                    <app-card  class="card" [mediaData]= "itemObj" cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" (mouseenter)="onMouseEnter(item.id, card, type)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id, type)"></app-card>              
+                }     
+            } @else {
+                <div class="results__skeleton">
+                    <p>No Tv Show's were founded... </p>
+                </div>
+            }
+        }@else {
+            <div class="skeleton"></div>
+        }
+       
+       
+    </div>
+</div>
+

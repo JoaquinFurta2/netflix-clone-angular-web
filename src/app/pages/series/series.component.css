@@ -1,0 +1,29 @@
+main {
+    color: var(--c-white-3);
+}
+
+.slider__header {
+    position: relative;
+    z-index: 100;
+    padding-left: 1.8rem;
+    font-size: 1.5rem;
+    
+}
+
+.slider__cont {
+    display: grid;
+    gap: 20px;
+   
+}
+
+.content {
+    display: grid;
+    gap: 50px;
+    margin-top: -5rem;
+}
+
+@media(max-width:600px) {
+    .slider__header {
+        font-size: 1rem;
+    }
+}

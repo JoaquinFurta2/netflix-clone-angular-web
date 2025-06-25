@@ -1,0 +1,211 @@
+
+.card-hover {
+    background-color: var(--c-black-2);
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 10px;
+    max-width: 250px;
+}
+
+.wait-first-render {
+    display: none;
+}
+
+.hover__img-wrapper {
+    position: relative
+}
+
+.hover__img {
+    height: auto;
+    width: 100%;
+    border-top-right-radius:5px ;
+    border-top-left-radius:5px ;
+}
+
+.title {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 1.1rem;
+    color: var(--c-white-2);
+    font-weight: var(--f-fw-medium);
+    text-shadow: 1px 1px 2px black;
+}
+
+.hover__content {
+    background-color: var(--c-black-2);
+    padding: 1.2rem 1rem;
+    display: grid;
+    gap: var(--space-md);
+}
+
+/* CONTROLS */
+
+.hover__controls {
+    display: grid;
+    grid-template-columns: auto auto auto 1fr;
+    gap: var(--space-md);
+}
+   
+.item {
+    display: flex;
+    place-items: center;
+    border-radius: 100%;
+    border: 2px solid #ffffff80;
+    padding: 0.5rem;
+    background-color: rgba(42, 42, 42, .6);
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+.item svg {
+    width: 22px;
+    height: auto;
+}
+
+.item path {
+    fill: var(--c-white-1);
+}
+
+.play {
+    background: var(--c-white-1);
+    border: 2px solid var(--c-white-1);
+}
+.play path  {
+    fill: var(--c-black-1);
+}
+
+.more {
+    justify-self: end;
+}
+
+.item::after, .item::before {
+    display: none;
+    position: absolute;
+    background-color: var(--c-white-2);
+    right: 50%;
+    translate: 50%;
+}
+
+.item::before {
+   
+    content: 'Add to My List';
+    width: max-content;   
+    top: -45px;
+    border-radius: 5px;
+
+    padding: 0.4rem 0.5rem 0.1rem 0.5rem ;
+    
+    font-weight: var(--f-fw-medium);
+    color: var(--c-black-2);
+    font-size: 1rem;
+
+}
+.item::after {
+    content: '';
+    top: -15px;
+    width: 15px;
+    height:15px ;
+    clip-path: polygon(50% 41%, 0 0, 100% 0);
+}
+
+
+.rate::before {
+    content: 'I like this';
+}
+.more::before {
+    content: 'More info';
+}
+.added::before {
+    content: 'Remove from My List';
+}
+.play::before, .play::after {
+    display: none;
+    content: none;
+}
+
+
+.item:hover {
+    border-color: var(--c-white-1);
+}
+.item:hover::before, .item:hover::after {
+    display: block;
+}
+
+
+/* DETAILS */
+
+.hover__details {
+    display: flex;
+    color:var(--c-grey-3) ;
+    gap: var(--space-md);
+}
+
+.release {
+    padding-left: 0.3rem;
+}
+
+.hd {
+    display: block;
+    height: fit-content;
+    padding: 0 0.4rem ;
+    border: 1px solid var(--c-grey-3);
+    background-color: var(--c-black-5);
+    font-size: 0.6rem;
+    border-radius: 4px;
+}
+
+
+/* GENRES */
+
+.hover__genres {
+    display: flex;
+    flex-wrap: wrap;
+     color: var(--c-white-2);
+ }
+
+.hover__genres {
+    color: var(--c-white-1);
+    gap:var(--space-sm);    
+}
+
+.genre {
+    display: flex;
+    place-items: center;
+    gap:var(--space-sm);    
+}
+
+.genre::before {
+    content: ' ';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: var(--c-grey-2);
+    border-radius: 100%;
+}
+
+.genre:first-child::before {
+    display: none;
+}
+
+@media (min-width:1020px) {
+    .card-hover {
+        max-width: 300px;
+    }
+    
+}
+
+@media (min-width:1430px) {
+    .card-hover {
+        max-width: 330px;
+    }
+    
+}
+
+@media (min-width:1650px) {
+    .card-hover {
+        max-width:unset;
+    }
+    
+}
+

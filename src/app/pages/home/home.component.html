@@ -1,0 +1,9 @@
+<main>
+    @let config = SliderService.HomeConfig();
+    @let data = SliderService.HomeData();
+
+    <app-hero class="hero" [id]="heroId" [type]="'movie'"> </app-hero> 
+
+    <app-slider-set-up [configInput]="config" [dataInput]="data"> </app-slider-set-up>
+</main>
+

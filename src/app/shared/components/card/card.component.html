@@ -1,0 +1,9 @@
+<div class="card">
+        <div class="card__skeleton" [style.display]="isLoaded() ? 'none' : 'block'"></div>
+        @if (resizeService.imgSize() === "sm"){
+            <img class="card__img" [ngSrc]="cardImg()"  width="220" height="330" (load)="isLoaded.set(true)" alt="">       
+        } @else {  
+            <img class="card__img" [ngSrc]="cardImg()" (load)="isLoaded.set(true)" width="300" height="169" alt="">
+            <h3 class="card__title">{{title()}}</h3> 
+        }
+</div>

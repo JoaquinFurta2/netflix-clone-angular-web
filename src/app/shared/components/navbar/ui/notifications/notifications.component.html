@@ -1,0 +1,15 @@
+<div class="noti">
+    @for (item of items; track $index) {
+        @defer {
+            <div class="item">
+                <img class="item__img" [ngSrc]="item.img" width="112" height="63" alt="">
+                <div class="item__wrapper">
+                    <h3 class="item__title">{{item.title}}</h3>
+                    <h3 class="item__desc">{{item.desc}}</h3>
+                    <p class="item__date">{{item.ago}}</p>
+                </div>
+            </div>
+        }
+        
+    }
+</div>

@@ -1,0 +1,17 @@
+@let config = configInput();
+@let data = dataInput();
+
+<div class="content">
+    @for (obj of config; track $index) {
+        @defer { 
+            <div class="slider__cont">
+                <h3 class="slider__header">{{obj.sliderHeader}}</h3>
+                @if (data[$index] | async; as media ) {
+                    <app-slider [type]="obj.type" [data]="media"></app-slider>
+                }@else {
+                    <div class="slider__skeleton"></div>
+                }  
+            </div>
+        }
+    }
+</div>

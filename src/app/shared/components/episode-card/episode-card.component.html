@@ -1,0 +1,11 @@
+<div class="card" >
+    <span class="episode-numb">{{episode().number}}</span>
+    <img class="card-img" [src]="episode().img" alt="">
+
+    <div class="card-content">
+        <h4 class="card-name">{{episode().name}}</h4>
+        <span class="card-runtime">{{episode().runtime}}m</span>
+        <p class="card-overview">{{overview()}}</p>
+    </div>
+    
+</div>

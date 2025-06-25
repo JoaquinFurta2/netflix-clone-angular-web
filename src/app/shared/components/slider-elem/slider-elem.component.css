@@ -1,0 +1,9 @@
+.main-slider {
+    display: flex;
+}
+.card {
+    padding-inline: 0.3rem;
+}
+.card__cont {
+    cursor: pointer;
+}

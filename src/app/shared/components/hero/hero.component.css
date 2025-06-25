@@ -1,0 +1,130 @@
+.hero {
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    background: linear-gradient(0deg, #141414, transparent 50%);
+    display: grid;
+    align-content: end;
+}
+
+.hero__content {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 8rem;
+    padding-left: 5rem;
+    padding-right: 3rem;
+    
+}
+
+.hero__img {
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero__skeleton {
+    position: absolute;
+    inset: 0;
+    z-index:-1;
+    background-color: rgb(118, 117, 117);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.button-wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.overview {
+    font-size: 1rem;
+    color: var(--c-white-1);
+    text-shadow: 2px 2px 4px rgba(0,0,0,.45);
+    max-width: 600px;
+}
+
+.item {
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    place-items: center;
+    border-radius: 100%;
+    border: 2px solid #ffffff80;
+    padding: 0.5rem 1rem;
+    background-color: rgba(42, 42, 42, .6);
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+.play {
+    background: var(--c-white-1);
+    border: 2px solid var(--c-white-1);
+    color: var(--c-black-1);
+    font-weight: var(--f-fw-medium);
+    font-size: 1.5rem;
+    border-radius: 5px;
+    gap: 10px;
+    letter-spacing: 1px;
+}
+
+
+
+.more {
+ 
+    gap: 10px;
+    border-radius: 5px;
+    color: var(--c-white-1);
+    background: rgba(109, 109, 110, 0.7);
+    border: none;
+    font-size: 1.3rem;
+   
+}
+
+.play:hover, .more:hover {
+    opacity: 0.8;
+}
+
+
+.play path  {
+    fill: var(--c-black-1);
+}
+
+
+@media(max-width:650px) {
+    .hero__content{
+        padding: 1rem;
+
+    }
+
+    .overview {
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width:375px) {
+    .button-wrapper{
+        flex-direction: column;
+    }
+    .item {
+        padding: 0.5rem 0.5rem;
+        font-size: 1rem;
+    }
+
+    .play {
+        width: 60%;
+    }
+
+    .more {
+        width: 50%;
+    }
+}
