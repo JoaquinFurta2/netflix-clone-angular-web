@@ -26,7 +26,9 @@
 }
 
 .card-runtime {
-    font-size: 1rem;
+    justify-self: center;
+    font-size: 0.8rem;
+     opacity: 0.8;
 }
 
 .episode-numb{
@@ -36,10 +38,10 @@
 
 
 
-@media(max-width:800px) {
+@media(max-width:600px) {
     .episode-numb {
         position: absolute;
-        bottom: 0px;
+        bottom: 6px;
         right: 15px;
     }
      .card {
@@ -48,11 +50,35 @@
     }
     
     .card-content {
-        grid-column: span 2;
         grid-template-columns: 1fr !important;
         gap: var(--space-sm);
+        font-size: 0.8rem;
+    }
+    .card-overview {
+        opacity: 0.8;
+        font-weight: var(--f-fw-light);
     }
     .card-runtime {
         grid-row: 3;
     }
+
+    .card-img {
+        width: 100%;
+        max-width: 200px;
+    }
+    .episode-numb {
+        font-size: 0.8rem;
+    }
+    .card-runtime {
+        justify-self: start;
+        opacity: 0.8;
+        font-size: 0.8rem;
+    }
+    
 }
+
+@media(max-width:700px) {
+     .card-content {
+        font-size: 0.8rem;
+    }
+ }

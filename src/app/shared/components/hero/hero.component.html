@@ -6,7 +6,7 @@
     
     <div class="hero__content">
         @if (data().logo; as logo) {
-            <img [ngSrc]="logo.url" width="500" [height]="logo.height" alt="">
+            <img class="logo" [ngSrc]="logo.url" width="500" [height]="logo.height" alt="">
         }
         <p class="overview">{{data().overview}}</p>
         <div class="button-wrapper">
