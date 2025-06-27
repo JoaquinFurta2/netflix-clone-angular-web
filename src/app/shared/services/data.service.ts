@@ -24,10 +24,10 @@ export class DataService {
   }
   
   async search(query:string, search: 'tv' | 'movie') : Promise<Movie[] | TVShow[]> {
-    const url = `https://api.themoviedb.org/3/search/${search}?query=${query}&include_adult=false&sort_by=vote_count.desc&vote_count.gte=100&language=en-US&page=1`
+    const url = `https://api.themoviedb.org/3/search/${search}?query=${query}&include_adult=false&language=en-US&page=1`
     const response = await fetch(url, this.options);
     const data:DiscoverPage = await response.json()
-    return data.results.slice(0,8)
+     return data.results.filter((m)=> m.vote_count > 50)
   }
   
   async credits(type: 'movie' | 'tv', id: number): Promise<Credits> {
@@ -58,7 +58,7 @@ export class DataService {
       const url = `https://api.themoviedb.org/3/discover/${type}?include_adult=false&page=${page}&sort_by=vote_count.desc&vote_count.gte=100&with_genres=${genre}`;
       const response = await fetch(url, this.options);
       const data: DiscoverPage = await response.json();
-      return data.results;
+      return data.results
   }
 
   byId2(type: 'movie' | 'tv', id: number):  Observable<MovieDetails | TVShowDetails> {

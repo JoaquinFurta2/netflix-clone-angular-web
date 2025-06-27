@@ -1,7 +1,7 @@
 <div class="results">
     <h2 class="results__title">Movie Results</h2>
     <div class="results__content">
-        @if(tvsSerchResults() | async; as movieResults) {
+        @if(movieSearchResults() | async; as movieResults) {
             @if (movieResults.length > 0) {
                 @for (item of movieSearchResults() | async; track item.id) {
                     @let type = 'movie';
