@@ -3,7 +3,7 @@ import { DataService } from './data.service';
 @Injectable({  providedIn: 'root',})
 
 export class HeroService { 
-    private homeHeroIds = [27205,333339,530915]
+    private homeHeroIds = [27205,333339,198663]
     private tvHeroIds = [66732,1402,44217]
     private movieHeroIds = [120,198663,718930]
 
