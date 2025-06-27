@@ -1,59 +1,69 @@
-# NetflixClone
+# 🎬 Netflix Clone — Angular 19 + TMDB API
+
+A fully responsive Netflix-style web app built with **Angular 19**, connected to **The Movie Database (TMDB)**.
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
 
-## Development server
+## 🔎 Live Demo
+[View live project on netlify](https://netfflixx-clone.netlify.app/)
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## Main Features
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- Integrated with the **TMDB API** to fetch real, up-to-date movies and TV shows data
+- **Infinite horizontal slider** to scroll through movies
+- **Hover previews** on movie cards using **Angular CDK Overlay**
+- **Modal with movie or series details** including:
+  - Overview, genres, cast
+  - Seasons and episodes (for series)
+- **Baisc Search** to find titles
+- **Add or remove movies** from your personal list
+- **Skeleton loaders** for better loading UX
+-  Fully **responsive** — works on desktop, tablet, and mobile
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 📸 Screenshots
+### Desktop
+<div style="display: flex; flex-wrap: wrap;">
+   <img src="./public/screenshots/screenshot-desktop-3.jpg" width="500"" />
+  <img src="./public/screenshots/screenshot-desktop-1.jpg" width="500"" />
+  <img src="./public/screenshots/screenshot-desktop-2.jpg" width="500"/>
+</div>
 
-```bash
-ng generate component component-name
-```
+### Mobile
+<div style="display: flex; flex-wrap: wrap;">
+   <img src="./public/screenshots/screenshot-mobile-1.jpg" width="175"" />
+  <img src="./public/screenshots/screenshot-mobile-2.jpg" width="175"" />
+</div>
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🛠️ Tech Stack
 
-## Building
+- **Angular 19** with standalone components
+- **Angular CDK Overlay** — for modals and hover cards
+- **CSS** — for layout and responsiveness
+- **TMDB API** — for movie/series data
+- **RxJS / Signals** — for reactive UI and state management
 
-To build the project run:
+---
 
-```bash
-ng build
-```
+## What I Learned
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- How to structure a real-world SPA using **Angular 19**
+- Leveraged **Angular CDK Overlay** for creating advanced hover and modal components
+- Built an **infinite scroll slider** that mimics Netflix’s UI
+- Created a responsive layout using pure CSS without external libraries
+- Worked with **real API data** from TMDB and displayed complex nested content
+- Managed custom user state (like personal lists) using Angular's reactivity
+- Improved UX using **skeleton loaders** during asynchronous data loads
+- Designed smooth interaction flows between **hover**, **modal**, and **card**
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Disclaimer
 
-```bash
-ng test
-```
+This is an educational project. It is **not affiliated with Netflix or TMDB** in any way.
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
