@@ -105,50 +105,23 @@
         padding: 1rem;
 
     }
-
     .overview {
         display: none;
     }
 
     .item {
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
     .item svg {
         width: 16px;
         height: 16px;
     }
-
     .hero {
         height: 80vh;
     }
     .logo {
-        margin: 0 auto;
         width: 80%;
-        height: 80%;
-    }
-    
-}
-
-@media(max-width:375px) {
-    .button-wrapper{
-        flex-direction: column;
-    }
-    .item {
-        padding: 0.5rem 0.5rem;
-        font-size: 0.8rem;
-        
-    }
-
-    .item svg {
-        width: 16px;
-        height: 16px;
-    }
-
-    .play {
-        width: 50%;
-    }
-
-    .more {
-        width: 40%;
+        max-width: 275px;
+        margin:0  auto 2rem;
     }
 }

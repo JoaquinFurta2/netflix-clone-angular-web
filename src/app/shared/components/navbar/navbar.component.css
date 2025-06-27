@@ -254,7 +254,12 @@ button:active {
         left: 0;
         right: 0;
         background-color: var(--c-black-3);
-        padding: 1rem 0.5rem;
+        padding: 0.7rem 0.5rem;
+         will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
     }
 
     .menu.display {
@@ -266,7 +271,16 @@ button:active {
         height: 40px;
     }
 
+    .noti__button {
+        padding: 0;
+        display: flex;
+        place-items: center center;
+    }
 
+    .menu {
+       font-size: 1.1rem;
+       font-weight: var(--f-fw-light);
+    }
 }
 
 @media (max-width:360px) {

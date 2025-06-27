@@ -7,6 +7,8 @@
     color: var(--c-white-2);
     height: 99%;
     max-height: none;
+    scrollbar-color: #555 transparent ;
+    scrollbar-width: thin;
 }
 
 ::backdrop {
@@ -242,7 +244,7 @@
 }
 
 .about__title {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .about__content {
@@ -430,7 +432,7 @@
         font-size: 0.7rem;
     }
 
-    .cast , .genres {
+    .cast , .genres , .director, .writer {
         font-size: 0.7rem;
     }   
 

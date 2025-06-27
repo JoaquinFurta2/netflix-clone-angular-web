@@ -1,7 +1,6 @@
 footer {
-    
     color: var(--c-grey-2);
-    padding: 3rem 3rem 1rem;
+    padding: 3rem 3rem 3rem;
     margin-top: 10rem;
 }
 
@@ -54,6 +53,9 @@ footer {
 
 
 @media (max-width:750px) {
+    footer {
+        margin-top: 5rem;
+    }
     .footer__nav {
         --col: 2;
         justify-items: center;
@@ -61,8 +63,15 @@ footer {
 }
 
 @media (max-width:450px) {
+    .footer__socials {
+        grid-row: 2;
+    }
+    footer {
+        padding: 1rem 1rem 3rem 1rem;
+    }
     .footer__nav {
-        --col:1;
+        --col:2;
         justify-items: start;
+        font-size: 12px;
     }
 }
