@@ -14,10 +14,10 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 - Integrated with the **TMDB API** to fetch real, up-to-date movies and TV shows data
 - **Infinite horizontal slider** to scroll through movies
 - **Hover previews** on movie cards using **Angular CDK Overlay**
+- **Search** to find titles
 - **Modal with movie or series details** including:
   - Overview, genres, cast
   - Seasons and episodes (for series)
-- **Baisc Search** to find titles
 - **Add or remove movies** from your personal list
 - **Skeleton loaders** for better loading UX
 -  Fully **responsive** — works on desktop, tablet, and mobile
@@ -28,7 +28,8 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 ### Desktop
 <div style="display: flex; flex-wrap: wrap;">
    <img src="./public/screenshots/screenshot-desktop-3.jpg" width="500"" />
-  <img src="./public/screenshots/screenshot-desktop-1.jpg" width="500"" />
+   <img src="./public/screenshots/screenshot-desktop-1.jpg" width="500"" />
+   <img src="./public/screenshots/screenshot-desktop-4.jpg" width="500"/>
   <img src="./public/screenshots/screenshot-desktop-2.jpg" width="500"/>
 </div>
 
