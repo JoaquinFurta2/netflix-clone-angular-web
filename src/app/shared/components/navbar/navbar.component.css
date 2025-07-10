@@ -218,7 +218,7 @@ button:active {
 
 @media (max-width:550px) {
     .nav__navigation-cont {
-        margin-bottom: 60px;
+        margin-bottom: 55px;
     }
 
     .nav__header .menu {
@@ -229,7 +229,7 @@ button:active {
         visibility: visible;
         position: fixed;
         inset: 0;
-        margin-bottom: 60px;
+        margin-bottom: 55px;
         translate: 100%;
         
     }
@@ -255,11 +255,7 @@ button:active {
         right: 0;
         background-color: var(--c-black-3);
         padding: 0.7rem 0.5rem;
-         will-change: transform;
-        transform: translateZ(0);
-        backface-visibility: hidden;
-        -webkit-transform: translateZ(0);
-        -webkit-backface-visibility: hidden;
+      
     }
 
     .menu.display {
