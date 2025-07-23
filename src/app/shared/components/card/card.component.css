@@ -46,12 +46,11 @@
     height: auto;
     width: 23vw;
 }
-
 @media (min-width:600px) {
     .card__img {
-        width: 27vw;
+        width: 18vw;
     }
-}
+} 
 
 @media (min-width:800px) {
     .card__img {

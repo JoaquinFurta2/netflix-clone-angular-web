@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    height: 90vh;
+    height: 90svh;
     width: 100%;
     background: linear-gradient(0deg, #141414, transparent 50%);
     display: grid;
@@ -11,9 +11,17 @@
     display: grid;
     gap: 30px;
     margin-bottom: 8rem;
-    padding-left: 5rem;
-    padding-right: 3rem;
+    padding-left: clamp(2rem, 5vw, 5rem);
     
+    
+}
+
+
+.logo {
+     width: auto;
+     max-height: clamp(80px, 10vw, 150px);
+     height: auto;
+     max-width: clamp(300px, 30vw, 500px);
 }
 
 .hero__img {
@@ -47,10 +55,10 @@
 }
 
 .overview {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1vw, 1rem) ;
     color: var(--c-white-1);
-    text-shadow: 2px 2px 4px rgba(0,0,0,.45);
-    max-width: 600px;
+    text-shadow: 5px 5px 4px rgba(0,0,0,.70);
+    max-width: clamp(300px, 50vw, 600px);
 }
 
 .item {
@@ -71,7 +79,7 @@
     border: 2px solid var(--c-white-1);
     color: var(--c-black-1);
     font-weight: var(--f-fw-medium);
-    font-size: 1.5rem;
+    font-size: clamp(1rem ,1.5vw, 1.5rem);
     border-radius: 5px;
     gap: 10px;
     letter-spacing: 1px;
@@ -80,13 +88,13 @@
 
 
 .more {
- 
+    font-size: clamp(1rem ,1.5vw, 1.5rem);
     gap: 10px;
     border-radius: 5px;
     color: var(--c-white-1);
-    background: rgba(109, 109, 110, 0.7);
+    background: rgba(109, 109, 110, 0.8);
     border: none;
-    font-size: 1.3rem;
+   
    
 }
 
@@ -98,6 +106,7 @@
 .play path  {
     fill: var(--c-black-1);
 }
+
 
 
 @media(max-width:650px) {
@@ -117,11 +126,24 @@
         height: 16px;
     }
     .hero {
-        height: 80vh;
+        height: 80svh;
     }
     .logo {
-        width: 80%;
-        max-width: 275px;
+        
+        width: auto;
+        max-width: 250px;
+        max-height: 80px;
         margin:0  auto 2rem;
     }
 }
+
+
+ @media (max-height: 700px) and (min-width: 800px) {
+      .hero {
+        height: 100svh;
+        }
+
+    } 
+
+
+ 
