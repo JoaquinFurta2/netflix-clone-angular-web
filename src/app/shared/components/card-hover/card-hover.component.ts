@@ -12,7 +12,40 @@ import { MyListService } from '../../services/mylist.service';
   imports: [NgOptimizedImage, DatePipe, OverlayModule],
   templateUrl: './card-hover.component.html',
   styleUrl: './card-hover.component.css',
-  animations: [
+  
+  
+})
+export class CardHoverComponent {
+
+  isOpen = signal<'visible' | 'hidden' | 'leaving'>('hidden')
+  isLiked = signal(false)
+
+  currentService = inject(CurrentService)
+  hoverService = inject(HoverService)
+  myListService = inject(MyListService)
+
+    
+  /* mouseEnter() {
+    this.isOpen.set('visible')
+  }
+    
+  mouseLeave() {
+    this.isOpen.set('leaving')
+    setTimeout(() => {
+      this.isOpen.set('hidden')
+      this.hoverService.ishover.set(0)
+    }, 400);
+  } 
+  
+  onScroll() {
+      if (this.isOpen() === 'visible')
+        this.mouseLeave()
+  } */
+  
+}
+
+
+/* animations: [
     trigger('animation', [
       state('visible', style({
         opacity:1,
@@ -37,34 +70,4 @@ import { MyListService } from '../../services/mylist.service';
       transition('hidden <=> visible', animate('0.4s ease-in-out')),
       transition('visible <=> leaving', animate('0.4s ease-in-out'))
     ])
-  ],
-  host:{'(window:scroll)': 'onScroll()'}
-})
-export class CardHoverComponent {
-
-  isOpen = signal<'visible' | 'hidden' | 'leaving'>('hidden')
-  isLiked = signal(false)
-
-  currentService = inject(CurrentService)
-  hoverService = inject(HoverService)
-  myListService = inject(MyListService)
-
-    
-  mouseEnter() {
-    this.isOpen.set('visible')
-  }
-    
-  mouseLeave() {
-    this.isOpen.set('leaving')
-    setTimeout(() => {
-      this.isOpen.set('hidden')
-      this.hoverService.ishover.set(0)
-    }, 400);
-  } 
-  
-  onScroll() {
-      if (this.isOpen() === 'visible')
-        this.mouseLeave()
-  }
-  
-}
+  ], */

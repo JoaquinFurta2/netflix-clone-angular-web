@@ -1,26 +1,24 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataService } from '../../shared/services/data.service';
-import { CurrentService } from '../../shared/services/current.service';
-import { HoverService } from '../../shared/services/hover.service';
-import { CdkOverlayOrigin, OverlayModule } from '@angular/cdk/overlay';
 import { AsyncPipe } from '@angular/common';
 import { CardComponent } from '../../shared/components/card/card.component';
-import { ResizeService } from '../../shared/services/resize.service';
+
 
 @Component({
   selector: 'app-search',
-  imports: [AsyncPipe,CardComponent, OverlayModule],
+  imports: [AsyncPipe,CardComponent],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })
 export class SearchComponent {
 
-  resizeService = inject(ResizeService)
+ 
   dataService = inject(DataService)
-  currentService = inject(CurrentService)
-  hoverService = inject(HoverService)
-  timeoutId = signal<any | undefined>(undefined)
+ 
+
+  typeMovie = signal<'movie' | 'tv'>('movie') //this types are because of a bug with angular template @let that conflicts with typescript 
+  typeTv = signal<'movie' | 'tv'>('tv')
 
 
   param = signal('')
@@ -41,32 +39,6 @@ export class SearchComponent {
   movieSearchResults = computed(() => {
      return this.dataService.search(this.param(), 'movie')
   })
-
-  onMouseEnter(itemId:number, card:CdkOverlayOrigin, itemType: "tv" | "movie" ) {
-    const id = setTimeout(() => {
-        this.currentService.SetUpDetails(itemId,itemType )
-        .then(() => {
-          this.hoverService.ishover.set(itemId)
-          this.hoverService.origin.set(card)
-          setTimeout(() => {
-            this.hoverService.isFirst.set(false)
-          }, 10)
-        })
-          
-    },400)
-    this.timeoutId.set(id)
-  }
-  
-    onMouseLeave() {
-    clearTimeout(this.timeoutId())
-  }   
-
-  OpenModal(itemId:number, itemType: "tv" | "movie") {
-    this.currentService.SetUpDetails(itemId,itemType)
-    .then(() =>
-      this.hoverService.toggleModal()
-    )
-  }
 }
 
 

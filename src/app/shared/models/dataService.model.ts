@@ -131,7 +131,8 @@ export interface cardData {
   title: string;
   backdrop: string;
   poster:string;
-  id?:number
+  id:number
+  type: 'movie' | 'tv'
 }
 
 export interface Images {

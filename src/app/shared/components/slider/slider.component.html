@@ -16,9 +16,9 @@
                 @for (item of splitMovies(); track $index) {
 
                     @if ($index === 1) {
-                        <app-slider-item #elem  [slideData]="item" class="item" [main]="true"  [type]="type()"></app-slider-item>
+                        <app-slider-item #elem  [slideData]="item" class="item"  [type]="type()"></app-slider-item>
                     } @else {
-                        <app-slider-item  [slideData]="item" class="item" [main]="true"  [type]="type()"></app-slider-item>
+                        <app-slider-item  [slideData]="item" class="item"   [type]="type()"></app-slider-item>
                     }  
                 }
                </div>  

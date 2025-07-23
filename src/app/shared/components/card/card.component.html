@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" #card (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()" (click)="OpenModal()">
         <div class="card__skeleton" [style.display]="isLoaded() ? 'none' : 'block'"></div>
         @if (resizeService.imgSize() === "sm"){
             <img class="card__img" [ngSrc]="cardImg()"  width="220" height="330" (load)="isLoaded.set(true)" alt="">       
@@ -7,3 +7,20 @@
             <h3 class="card__title">{{title()}}</h3> 
         }
 </div>
+
+
+ @if (resizeService.imgSize() !== "sm"){
+        <ng-template
+            CardHover
+            cdkConnectedOverlay 
+            [cdkConnectedOverlayOrigin]="card"
+            [cdkConnectedOverlayOpen]="isHover()" 
+            [cdkConnectedOverlayPositions]="[
+                { originX:'center', originY:'top', overlayX:'center', overlayY:'top'}
+            ]"
+            cdkConnectedOverlayFlexibleDimensions="true" 
+            cdkConnectedOverlayTransformOriginOn="app-card-hover"    
+            >   
+            <app-card-hover class="card-hover" [class.active]="hoverAnimation()" (mouseleave)="this.closeCardHover()" ></app-card-hover>
+        </ng-template>
+  }

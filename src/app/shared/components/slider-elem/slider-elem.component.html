@@ -1,24 +1,8 @@
 
-@if(!main()) {
     @for (item of slideData(); track item.id) {
-        @let itemObj = {'title': type() === 'movie' ? item.title : item.name, 'poster': item.poster_path, 'backdrop': item.backdrop_path};
+        @let itemObj = {'title': type() === 'movie' ? item.title : item.name, 'poster': item.poster_path, 'backdrop': item.backdrop_path, 'id': item.id, type:type()};
         <div class="card">
-            <app-card [mediaData]= "itemObj"></app-card> 
-        </div>   
-    }
-} @else  {
-    <div class="main-slider" >
-        @for (item of slideData(); track item.id) {
-            @let itemObj = {'title': type() === 'movie' ? item.title : item.name, 'poster': item.poster_path, 'backdrop': item.backdrop_path};
-            @if (this.resizeService.imgSize() === 'sm') {
-                <div class="card" [attr.item-id]="item.id"  (click)="OpenModal(item.id)">
-                    <app-card  [mediaData]= "itemObj"></app-card> 
-                </div>
-            } @else {
-                <div class="card">
-                    <app-card  class="card__cont" [mediaData]= "itemObj" cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" (mouseenter)="onMouseEnter(item.id, card)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id)"></app-card> 
-                </div>
-            }             
-        }     
-    </div>
-}
+            <app-card  [mediaData]= "itemObj"></app-card> 
+        </div>    
+    }     
+

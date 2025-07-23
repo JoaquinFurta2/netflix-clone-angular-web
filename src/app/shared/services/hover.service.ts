@@ -4,9 +4,9 @@ import { CdkOverlayOrigin } from '@angular/cdk/overlay';
 @Injectable({  providedIn: 'root',})
 
 export class HoverService {
-    ishover =  signal<number>(0)
+  /*   ishover =  signal<number>(0)
     origin = signal<CdkOverlayOrigin | null >(null)
-    isFirst = signal(true)
+    isFirst = signal(true) */
 
     
     Modal = signal(false)

@@ -5,14 +5,14 @@
         @if (list().length > 0) {
             @for (item of list(); track item.id) {
                 @if (cardData() | async; as data) {
-                    <app-card class="card" [mediaData]="data[$index]"  cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" [attr.item-type]="item.type" (mouseenter)="onMouseEnter(item.id, card, item.type)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id, item.type)"></app-card>
+                    <app-card class="card" [mediaData]="data[$index]"></app-card>
                 }
             }
         } @else {
             <div class="skeleton"><p>Ups! your list is empty</p></div>
         }
         
-    </div>
+    </div> 
 
    
 </div>

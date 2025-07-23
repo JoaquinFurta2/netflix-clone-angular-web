@@ -4,14 +4,9 @@
         @if(movieSearchResults() | async; as movieResults) {
             @if (movieResults.length > 0) {
                 @for (item of movieResults; track item.id) {
-                    @let type = 'movie';
-                    @let itemObj = {'title': item.title, 'poster': item.poster_path, 'backdrop': item.backdrop_path};
-                      @if (this.resizeService.imgSize() === 'sm') { 
-                         <app-card class="card" [mediaData]="itemObj" (click)="OpenModal(item.id, type)"></app-card>
-                      } @else {
-                        <app-card  class="card" [mediaData]= "itemObj" cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" (mouseenter)="onMouseEnter(item.id, card, type)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id, type)"></app-card>              
-
-                      }
+                    @let itemObj = {'title': item.title, 'poster': item.poster_path, 'backdrop': item.backdrop_path, type:typeMovie(), 'id':item.id};
+                    <app-card class="card" [mediaData]="itemObj"></app-card>
+    
                 }  
             }@else {
                 <div class="results__skeleton">
@@ -29,15 +24,8 @@
         @if(tvsSerchResults() | async; as tvResults) {
             @if (tvResults.length > 0) {
                 @for (item of tvResults; track item.id) {
-                    @let itemObj = {'title': item.name, 'poster': item.poster_path, 'backdrop': item.backdrop_path};
-                    @let type = 'tv';
-                    @if (this.resizeService.imgSize() === 'sm') {
-                        <app-card class="card" [mediaData]="itemObj" (click)="OpenModal(item.id, type)"></app-card>
-                    } @else {
-                        
-                        <app-card  class="card" [mediaData]= "itemObj" cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" (mouseenter)="onMouseEnter(item.id, card, type)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id, type)"></app-card>              
-                    }     
-                  
+                    @let itemObj = {'title': item.name, 'poster': item.poster_path, 'backdrop': item.backdrop_path, 'id':item.id, type:typeTv()};
+                    <app-card class="card" [mediaData]="itemObj"></app-card>
                 }     
             } @else {
                 <div class="results__skeleton">
