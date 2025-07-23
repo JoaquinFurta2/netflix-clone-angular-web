@@ -81,7 +81,7 @@
                         <button   class="menu-but">Season {{c.season()}}</button>
                         <div class="menu">
                             @for (item of c.seasonNumb(); track $index) {
-                                <button class="menu-item"  (click)="OnSeasonChange(item)">Season {{item}}</button>
+                                <button class="menu-item"  (mousedown)="OnSeasonChange(item)">Season {{item}}</button>
                             }
                         </div>
                     }
