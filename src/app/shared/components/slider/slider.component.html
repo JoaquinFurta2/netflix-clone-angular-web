@@ -1,6 +1,6 @@
 
     <div class="slider" >
-        <button class="slider__prev" [class.hidden]="buttonDisabled()" [class.notClickable] = "notClickable()" (click)="scrollPrev()">
+        <button class="slider__prev"  [class.notClickable] = "" (click)="scrollPrev()">
             <svg fill="#fff" height="30px" width="30px" version="1.1" id="XMLID_287_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                 viewBox="0 0 24 24" xml:space="preserve">
             <g>
@@ -10,14 +10,21 @@
             </g>
             </svg>
         </button>
-            <div class="slider__cont" #slider>
-                @if(!buttonDisabled()) {
-                    <app-slider-item [slideData]="splitMovies()[prevSlide()]" class="item item--prev" [class.transitionNext]="transitionNext()" [class.transitionPrev]="transitionPrev()"  [type]="type()"></app-slider-item>
-                } 
-                <app-slider-item [slideData]="splitMovies()[currSlide()]" class="item item--curr" [class.transitionNext]="transitionNext()" [class.transitionPrev]="transitionPrev()" [main]="true" [type]="type()"></app-slider-item>
-                <app-slider-item [slideData]="splitMovies()[nextSlide()]" class="item item--next" [class.transitionNext]="transitionNext()" [class.transitionPrev]="transitionPrev()"  [type]="type()"></app-slider-item>
+            <div class="slider__cont">
+               <div class="scroll-track" [style.transform]="trackTransform()" [class.no-transition]="disableTransition()">
+
+                @for (item of splitMovies(); track $index) {
+
+                    @if ($index === 1) {
+                        <app-slider-item #elem  [slideData]="item" class="item" [main]="true"  [type]="type()"></app-slider-item>
+                    } @else {
+                        <app-slider-item  [slideData]="item" class="item" [main]="true"  [type]="type()"></app-slider-item>
+                    }  
+                }
+               </div>  
+             
             </div>       
-        <button class="slider__next" (click)="scrollNext()" [class.notClickable] = "notClickable()">
+        <button class="slider__next" (click)="scrollNext()" [class.notClickable] = "">
             <svg fill="#fff" height="30px" width="30px" version="1.1" id="XMLID_287_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                 viewBox="0 0 24 24" xml:space="preserve">
             <g id="next">
@@ -28,4 +35,3 @@
             </svg>
         </button>
     </div>
-    
