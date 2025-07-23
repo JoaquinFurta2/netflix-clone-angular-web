@@ -6,6 +6,7 @@ import { HoverService } from '../../shared/services/hover.service';
 import { CdkOverlayOrigin, OverlayModule } from '@angular/cdk/overlay';
 import { AsyncPipe } from '@angular/common';
 import { CardComponent } from '../../shared/components/card/card.component';
+import { ResizeService } from '../../shared/services/resize.service';
 
 @Component({
   selector: 'app-search',
@@ -15,6 +16,7 @@ import { CardComponent } from '../../shared/components/card/card.component';
 })
 export class SearchComponent {
 
+  resizeService = inject(ResizeService)
   dataService = inject(DataService)
   currentService = inject(CurrentService)
   hoverService = inject(HoverService)

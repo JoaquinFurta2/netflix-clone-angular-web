@@ -3,10 +3,15 @@
     <div class="results__content">
         @if(movieSearchResults() | async; as movieResults) {
             @if (movieResults.length > 0) {
-                @for (item of movieSearchResults() | async; track item.id) {
+                @for (item of movieResults; track item.id) {
                     @let type = 'movie';
                     @let itemObj = {'title': item.title, 'poster': item.poster_path, 'backdrop': item.backdrop_path};
-                    <app-card  class="card" [mediaData]= "itemObj" cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" (mouseenter)="onMouseEnter(item.id, card, type)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id, type)"></app-card>              
+                      @if (this.resizeService.imgSize() === 'sm') { 
+                         <app-card class="card" [mediaData]="itemObj" (click)="OpenModal(item.id, type)"></app-card>
+                      } @else {
+                        <app-card  class="card" [mediaData]= "itemObj" cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" (mouseenter)="onMouseEnter(item.id, card, type)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id, type)"></app-card>              
+
+                      }
                 }  
             }@else {
                 <div class="results__skeleton">
@@ -19,14 +24,20 @@
           
     </div>
 
-    <h2 class="results__title">Tv Results</h2>
+    <h2 class="results__title">Tv Show's Results</h2>
     <div class="results__content">
         @if(tvsSerchResults() | async; as tvResults) {
             @if (tvResults.length > 0) {
                 @for (item of tvResults; track item.id) {
-                    @let type = 'tv';
                     @let itemObj = {'title': item.name, 'poster': item.poster_path, 'backdrop': item.backdrop_path};
-                    <app-card  class="card" [mediaData]= "itemObj" cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" (mouseenter)="onMouseEnter(item.id, card, type)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id, type)"></app-card>              
+                    @let type = 'tv';
+                    @if (this.resizeService.imgSize() === 'sm') {
+                        <app-card class="card" [mediaData]="itemObj" (click)="OpenModal(item.id, type)"></app-card>
+                    } @else {
+                        
+                        <app-card  class="card" [mediaData]= "itemObj" cdkOverlayOrigin #card="cdkOverlayOrigin" [attr.item-id]="item.id" (mouseenter)="onMouseEnter(item.id, card, type)" (mouseleave)="onMouseLeave()" (click)="OpenModal(item.id, type)"></app-card>              
+                    }     
+                  
                 }     
             } @else {
                 <div class="results__skeleton">
