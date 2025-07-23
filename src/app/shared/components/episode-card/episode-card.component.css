@@ -37,8 +37,15 @@
 }
 
 
+@media (max-width:1000px) {
+    .card {
+        grid-template-columns: auto 1fr 2fr;
+    }
+}
 
-@media(max-width:600px) {
+
+
+@media(max-width:800px) {
     .episode-numb {
         position: absolute;
         bottom: 6px;
