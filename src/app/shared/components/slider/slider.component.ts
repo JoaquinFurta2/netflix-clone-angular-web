@@ -31,7 +31,7 @@ export class SliderComponent {
  
   amountOfSlides = signal(4)
   currSlide = signal(1)
-  buttonDisabled = signal(true)
+  buttonDisabled = signal(false)
   disableTransition = signal(false)
 
   
@@ -84,22 +84,24 @@ export class SliderComponent {
 scrollNext() {
   this.disableTransition.set(false); 
   this.currSlide.set(this.currSlide() + 1);
+  this.buttonDisabled.set(true)
 
   // Wait for the animation to finish
   setTimeout(() => {
     if (this.currSlide() === this.splitMovies().length - 1) {
       this.disableTransition.set(true); 
       this.currSlide.set(1);         
-     
     }
-     console.log(this.currSlide())
+    this.buttonDisabled.set(false)
+    
   }, 800);
 }
 
 scrollPrev() {
  
  this.disableTransition.set(false); 
-  this.currSlide.set(this.currSlide() - 1);
+this.currSlide.set(this.currSlide() - 1);
+this.buttonDisabled.set(true)
 
   // Wait for the animation to finish
   setTimeout(() => {
@@ -107,8 +109,8 @@ scrollPrev() {
     if (this.currSlide() === 0) {
       this.disableTransition.set(true); 
       this.currSlide.set(this.amountOfSlides());      
-    }
-     console.log(this.currSlide())  
+    } 
+     this.buttonDisabled.set(false)
   }, 800);
 } 
 
