@@ -29,6 +29,7 @@ export class SliderComponent {
     return this.data()
   });
  
+  amountOfSlides = signal(4)
   currSlide = signal(1)
   buttonDisabled = signal(true)
   disableTransition = signal(false)
@@ -58,13 +59,27 @@ export class SliderComponent {
 
 
 
+
+
   // Lifecycle
   constructor() {
+
+    effect(() => {
+    const size = this.resizeService.imgSize()
+    
+      switch (size) {
+        case "sm":
+          this.amountOfSlides.set(6)
+          break
+        case "md":
+          this.amountOfSlides.set(5)
+          break
+        case "big":
+          this.amountOfSlides.set(4)
+          break
+      }
+    })
   }
-
-
-
- 
 
 scrollNext() {
   this.disableTransition.set(false); 
@@ -75,25 +90,27 @@ scrollNext() {
     if (this.currSlide() === this.splitMovies().length - 1) {
       this.disableTransition.set(true); 
       this.currSlide.set(1);         
+     
     }
+     console.log(this.currSlide())
   }, 800);
 }
 
 scrollPrev() {
+ 
  this.disableTransition.set(false); 
   this.currSlide.set(this.currSlide() - 1);
 
   // Wait for the animation to finish
   setTimeout(() => {
-
+    
     if (this.currSlide() === 0) {
       this.disableTransition.set(true); 
-      this.currSlide.set(4);            
+      this.currSlide.set(this.amountOfSlides());      
     }
+     console.log(this.currSlide())  
   }, 800);
 } 
-
-
 
  // Private
   private splitM(n:number) {
